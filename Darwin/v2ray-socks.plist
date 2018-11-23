@@ -8,13 +8,13 @@
     <array>
         <string>ROOT/Darwin/v2ray</string>
         <string>-config</string>
-        <string>ROOT/Darwin/config.json.socks</string>
+        <string>ROOT/config.json.socks</string>
     </array>
     <key>StandardOutPath</key>
     <string>/tmp/v2ray-socks.log</string>
     <key>StandardErrorPath</key>
     <string>/tmp/v2ray-socks.log</string>
     <key>RunAtLoad</key>
-    <false/>
+    <true/>
 </dict>
 </plist>

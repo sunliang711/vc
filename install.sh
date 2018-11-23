@@ -37,8 +37,8 @@ EOF
             sudo -- sh -c "$cmds"
             ;;
         Darwin)
-            sed -e "s|ROOT|$root|g" $(uname)/v2ray-router.plist $home/Library/LaunchAgents/v2ray-router.plist
-            sed -e "s|ROOT|$root|g" $(uname)/v2ray-socks.plist $home/Library/LaunchAgents/v2ray-socks.plist
+            sed -e "s|ROOT|$root|g" $(uname)/v2ray-router.plist > $home/Library/LaunchAgents/v2ray-router.plist
+            sed -e "s|ROOT|$root|g" $(uname)/v2ray-socks.plist > $home/Library/LaunchAgents/v2ray-socks.plist
             ln -sf "$root/v22.sh" /usr/local/bin
             ;;
     esac

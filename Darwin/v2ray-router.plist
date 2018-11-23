@@ -8,13 +8,13 @@
     <array>
         <string>ROOT/Darwin/v2ray</string>
         <string>-config</string>
-        <string>ROOT/Darwin/config.json.router</string>
+        <string>ROOT/config.json.router</string>
     </array>
     <key>StandardOutPath</key>
     <string>/tmp/v2ray-router.log</string>
     <key>StandardErrorPath</key>
     <string>/tmp/v2ray-router.log</string>
     <key>RunAtLoad</key>
-    <false/>
+    <true/>
 </dict>
 </plist>
