@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>v2ray.router</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>ROOT/Darwin/v2ray</string>
+        <string>-config</string>
+        <string>ROOT/Darwin/config.json.router</string>
+    </array>
+    <key>StandardOutPath</key>
+    <string>/tmp/v2ray-router.log</string>
+    <key>StandardErrorPath</key>
+    <string>/tmp/v2ray-router.log</string>
+    <key>RunAtLoad</key>
+    <false/>
+</dict>
+</plist>
