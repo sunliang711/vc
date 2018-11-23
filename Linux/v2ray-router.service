@@ -11,7 +11,7 @@ User=USER
 Group=USER
 Type=simple
 PIDFile=/tmp/v2ray-router.pid
-ExecStart=ROOT/v2ray -config ROOT/config.json.router
+ExecStart=ROOT/Linux/v2ray -config ROOT/config.json.router
 Restart=on-failure
 # Don't restart in the case of configuration error
 RestartPreventExitStatus=23

@@ -11,7 +11,7 @@ User=USER
 Group=USER
 Type=simple
 PIDFile=/tmp/v2ray-socks.pid
-ExecStart=ROOT/v2ray -config ROOT/config.json.socks
+ExecStart=ROOT/Linux/v2ray -config ROOT/config.json.socks
 Restart=on-failure
 # Don't restart in the case of configuration error
 RestartPreventExitStatus=23
