@@ -1,79 +1,89 @@
 {
     "inbound": {
-        "port": 1082,
-        "protocol": "socks",
         "domainOverride": [
-            "tls",
+            "tls", 
             "http"
-        ],
+        ], 
+        "protocol": "socks", 
+        "port": 1082, 
         "settings": {
             "auth": "noauth"
         }
-    },
-    "log": {
-        "loglevel": "info"
-    },
+    }, 
+    "outboundDetour": [
+        {
+            "tag": "direct", 
+            "protocol": "freedom", 
+            "settings": {}
+        }, 
+        {
+            "tag": "adblock", 
+            "protocol": "blackhole", 
+            "settings": {}
+        }
+    ], 
     "outbound": {
-        "protocol": "vmess",
+        "streamSettings": {
+            "network": "ws"
+        }, 
+        "protocol": "vmess", 
         "settings": {
             "vnext": [
                 {
-                    "address": "g2.eagle711.win",
-                    "port": 8900,
+                    "address": "g2.eagle711.win", 
                     "users": [
                         {
-                            "afterId": 64,
-                            "id": "e2791dbb-f340-4a71-998a-da3b184a1cef",
+                            "afterId": 64, 
+                            "id": "e2791dbb-f340-4a71-998a-da3b184a1cef", 
                             "level": 1
                         }
-                    ]
+                    ], 
+                    "port": 8900
                 }
             ]
-        },
-        "streamSettings": {
-            "network": "ws"
         }
-    },
-    "outboundDetour": [
-        {
-            "protocol": "freedom",
-            "settings": {},
-            "tag": "direct"
-        },
-        {
-            "protocol": "blackhole",
-            "settings": {},
-            "tag": "adblock"
-        }
-    ],
+    }, 
+    "log": {
+        "loglevel": "info"
+    }, 
     "routing": {
-        "strategy": "rules",
+        "strategy": "rules", 
         "settings": {
-            "domainStrategy": "IPIfNonMatch",
             "rules": [
                 {
                     "domain": [
-                        "ad.com"
-                    ],
-                    "type": "field",
+                        "ad.com", 
+                        "ad1.com", 
+                        "ad2.com", 
+                        "ad3.com", 
+                        "ad4.com", 
+                        "ad5.com"
+                    ], 
+                    "type": "field", 
                     "outboundTag": "adblock"
-                },
+                }, 
                 {
                     "domain": [
-                        "qq.com"
-                    ],
-                    "type": "field",
+                        "qq.com", 
+                        "baidu.com", 
+                        "dircet1.com", 
+                        "direct2.com", 
+                        "qq.com", 
+                        "jd.com"
+                    ], 
+                    "type": "field", 
                     "outboundTag": "direct"
-                },
+                }, 
                 {
-                    "type": "chinasites",
+                    "type": "chinasites", 
                     "outboundTag": "direct"
-                },
+                }, 
                 {
-                    "type": "chinaip",
+                    "type": "chinaip", 
                     "outboundTag": "direct"
                 }
-            ]
+            ], 
+            "domainStrategy": "IPIfNonMatch"
         }
     }
 }
